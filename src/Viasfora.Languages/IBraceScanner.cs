@@ -4,7 +4,7 @@ using Winterdom.Viasfora.Util;
 
 namespace Winterdom.Viasfora.Rainbow {
   public interface IBraceScanner {
-    String BraceList { get; }
+    String BraceList { get; set; }
     void Reset(int state);
     bool Extract(ITextChars text, ref CharPos pos);
   }

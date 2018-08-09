@@ -34,6 +34,10 @@ namespace Winterdom.Viasfora.Languages {
       };
     protected override String[] VisibilityDefaults => EMPTY;
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
+
     public PythonSettings(ITypedSettingsStore store)
       : base (Langs.Python, store) {
     }

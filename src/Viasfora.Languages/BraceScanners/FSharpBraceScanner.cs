@@ -12,7 +12,7 @@ namespace Winterdom.Viasfora.Languages.BraceScanners {
     const int stTripleQuotedString = 5;
     private int status = stText;
 
-    public String BraceList => "(){}[]"; 
+    public String BraceList { get; set; } = "(){}[]"; 
 
     public FSharpBraceScanner() {
     }

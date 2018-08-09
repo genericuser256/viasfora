@@ -36,6 +36,10 @@ namespace Winterdom.Viasfora.Languages {
     protected override String[] LinqDefaults => EMPTY;
     protected override String[] VisibilityDefaults => EMPTY;
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
+
     public PowershellSettings(ITypedSettingsStore store)
       : base (Langs.PowerShell, store) {
     }

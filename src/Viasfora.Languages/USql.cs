@@ -28,7 +28,7 @@ namespace Winterdom.Viasfora.Languages {
       return new CSharpStringScanner(text, classificationName);
     }
 
-    public override bool IsKeywordClassification(String classificationType) {
+    public override Boolean IsKeywordClassification(String classificationType) {
       return classificationType.EndsWith("keyword", StringComparison.OrdinalIgnoreCase);
     }
   }
@@ -42,6 +42,10 @@ namespace Winterdom.Viasfora.Languages {
     protected override String[] VisibilityDefaults => new String[] {
         "readonly"
       };
+
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
 
     public USqlSettings(ITypedSettingsStore store)
       : base (Langs.USql, store) {

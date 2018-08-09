@@ -11,7 +11,7 @@ namespace Winterdom.Viasfora.Languages.BraceScanners {
     const int stDoubleQuotedString = 3;
     private int state;
 
-    public String BraceList => "(){}[]";
+    public String BraceList { get; set; } = "(){}[]";
 
     public CssBraceScanner() {
     }

@@ -15,7 +15,7 @@ namespace Winterdom.Viasfora.Languages.BraceScanners {
     private int nestingLevel = 0;
     private bool parsingExpression = false;
 
-    public String BraceList => "(){}[]";
+    public String BraceList { get; set; } = "(){}[]";
 
     public JScriptBraceScanner() {
     }

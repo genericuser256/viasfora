@@ -34,6 +34,10 @@ namespace Winterdom.Viasfora.Languages {
        "export", "public", "private"
       };
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
+
     public TypeScriptSettings(ITypedSettingsStore store)
       : base (Langs.TypeScript, store) {
     }

@@ -33,6 +33,11 @@ namespace Winterdom.Viasfora.Languages {
     protected override String[] ControlFlowDefaults => EMPTY;
     protected override String[] LinqDefaults => EMPTY;
     protected override String[] VisibilityDefaults => EMPTY;
+    
+
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
 
     public CssSettings(ITypedSettingsStore store)
       : base (Langs.Css, store) {

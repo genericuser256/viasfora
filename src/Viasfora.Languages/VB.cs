@@ -23,7 +23,7 @@ namespace Winterdom.Viasfora.Languages {
     protected override IBraceScanner NewBraceScanner()
       => new VbBraceScanner();
 
-    public override bool IsKeywordClassification(String classificationType) {
+    public override Boolean IsKeywordClassification(String classificationType) {
       return CompareClassification(classificationType, "Keyword")
           || CompareClassification(classificationType, "VBScript Keyword");
     }
@@ -44,6 +44,10 @@ namespace Winterdom.Viasfora.Languages {
     protected override String[] VisibilityDefaults => new String[] {
        "friend", "public", "private", "protected"
       };
+
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}"
+    };
 
     public VBSettings(ITypedSettingsStore store)
       : base (Langs.VB, store) {

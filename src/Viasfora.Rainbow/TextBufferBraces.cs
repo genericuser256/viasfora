@@ -31,7 +31,8 @@ namespace Winterdom.Viasfora.Rainbow {
         this.braceScanner = this.language.GetService<IBraceScanner>();
 
         this.braceList.Clear();
-        this.BraceChars = this.braceScanner.BraceList;
+        this.BraceChars = this.language.GetBraceChars();
+        this.braceScanner.BraceList = this.BraceChars;
         for ( int i = 0; i < BraceChars.Length; i += 2 ) {
           this.braceList.Add(BraceChars[i], BraceChars[i + 1]);
         }

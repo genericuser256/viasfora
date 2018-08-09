@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+
+using Winterdom.Viasfora.Languages;
 using Winterdom.Viasfora.Languages.BraceScanners;
 using Xunit;
 

@@ -30,6 +30,7 @@ namespace Winterdom.Viasfora.Languages {
     protected override String[] ControlFlowDefaults => EMPTY;
     protected override String[] LinqDefaults => EMPTY;
     protected override String[] VisibilityDefaults => EMPTY;
+    protected override String[] BracesDefaults => EMPTY;
 
     public XLangSettings(ITypedSettingsStore store)
       : base (Langs.XLang, store) {

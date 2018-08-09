@@ -13,7 +13,7 @@ namespace Winterdom.Viasfora.Languages.BraceScanners {
     const int stStringDouble = 2;
     private int status = stText;
 
-    public string BraceList => "()";
+    public string BraceList { get; set; } = "()";
 
     public void Reset(int state) {
       this.status = stText;

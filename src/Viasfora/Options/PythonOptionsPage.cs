@@ -15,6 +15,7 @@ namespace Winterdom.Viasfora.Options {
     public override void SaveSettingsToStorage() {
       base.SaveSettingsToStorage();
       this.language.Settings.ControlFlow = ControlFlowKeywords.ToArray();
+      this.language.Settings.Braces = Braces.ToArray();
       this.language.Settings.Linq = LinqKeywords.ToArray();
       this.language.Settings.Enabled = Enabled;
       this.language.Settings.Save();
@@ -22,6 +23,7 @@ namespace Winterdom.Viasfora.Options {
     public override void LoadSettingsFromStorage() {
       base.LoadSettingsFromStorage();
       ControlFlowKeywords = this.language.Settings.ControlFlow.ToList();
+      Braces = this.language.Settings.Braces.ToList();
       LinqKeywords = this.language.Settings.Linq.ToList();
       Enabled = this.language.Settings.Enabled;
     }
@@ -36,6 +38,13 @@ namespace Winterdom.Viasfora.Options {
     [Editor(Constants.STRING_COLLECTION_EDITOR, typeof(UITypeEditor))]
     [TypeConverter(typeof(Design.StringListConverter))]
     public List<String> ControlFlowKeywords { get; set; }
+
+    [LocDisplayName("Braces")]
+    [Description("Braces to highlight")]
+    [Category("Python")]
+    [Editor(Constants.STRING_COLLECTION_EDITOR, typeof(UITypeEditor))]
+    [TypeConverter(typeof(Design.StringListConverter))]
+    public List<String> Braces { get; set; }
 
     [LocDisplayName("Query")]
     [Description("Query keywords to highlight")]

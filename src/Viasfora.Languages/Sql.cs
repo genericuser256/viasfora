@@ -37,6 +37,10 @@ namespace Winterdom.Viasfora.Languages {
        "public", "external"
       };
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "[", "]"
+    };
+
     public SqlSettings(ITypedSettingsStore store)
       : base (Langs.Sql, store) {
     }

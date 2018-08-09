@@ -18,6 +18,15 @@ namespace Winterdom.Viasfora {
       return lang.Settings.Linq.Contains(lang.NormalizationFunction(text), comparer);
     }
 
+    public static string GetBraceChars(this ILanguage lang) {
+      var braces = lang.Settings.Braces.Distinct();
+      const string openingBraces = "([{<";
+      const string closingBraces = ")]}>";
+      braces = braces.Where(brace => openingBraces.Contains(brace));
+      braces = braces.SelectMany(brace => new[] { brace, closingBraces[openingBraces.IndexOf(brace)].ToString() });
+      return string.Concat(braces);
+    }
+
     public static ILanguage TryCreateLanguage(this ILanguageFactory factory, ITextBuffer buffer) {
       return factory.TryCreateLanguage(buffer.ContentType);
     }

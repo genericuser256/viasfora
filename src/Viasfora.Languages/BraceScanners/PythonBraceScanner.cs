@@ -10,7 +10,7 @@ namespace Winterdom.Viasfora.Languages.BraceScanners {
     private int status = stText;
     private char quoteChar;
 
-    public String BraceList => "(){}[]";
+    public String BraceList { get; set; } = "(){}[]";
 
     public PythonBraceScanner() {
     }

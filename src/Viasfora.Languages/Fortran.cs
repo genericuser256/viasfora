@@ -31,6 +31,10 @@ namespace Winterdom.Viasfora.Languages {
        "public", "private"
       };
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")"
+    };
+
     public FortranSettings(ITypedSettingsStore store)
       : base (Langs.Fortran, store) {
     }

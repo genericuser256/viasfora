@@ -35,6 +35,10 @@ namespace Winterdom.Viasfora.Languages {
       "public", "private", "protected", "internal", "friend"
     };
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
+
     public CppSettings(ITypedSettingsStore store)
       : base(Langs.Cpp, store) {
     }

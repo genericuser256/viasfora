@@ -7,7 +7,7 @@ using Winterdom.Viasfora.Settings;
 namespace Winterdom.Viasfora.Languages {
   public class DefaultLanguage : LanguageInfo, ILanguage {
 
-    protected override string[] SupportedContentTypes => new String[0];
+    protected override String[] SupportedContentTypes => new String[0];
     public ILanguageSettings Settings { get; private set; }
 
     [ImportingConstructor]
@@ -15,7 +15,7 @@ namespace Winterdom.Viasfora.Languages {
       this.Settings = new DefaultSettings(store);
     }
 
-    public override bool MatchesContentType(Func<String, bool> _) {
+    public override Boolean MatchesContentType(Func<String, Boolean> _) {
       return true;
     }
     protected override IBraceScanner NewBraceScanner()
@@ -26,6 +26,7 @@ namespace Winterdom.Viasfora.Languages {
     protected override String[] ControlFlowDefaults => EMPTY;
     protected override String[] LinqDefaults => EMPTY;
     protected override String[] VisibilityDefaults => EMPTY;
+    protected override String[] BracesDefaults => EMPTY;
 
     public DefaultSettings(ITypedSettingsStore store)
       : base ("Text", store) {

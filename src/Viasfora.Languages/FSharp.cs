@@ -38,6 +38,10 @@ namespace Winterdom.Viasfora.Languages {
        "public", "private", "internal"
       };
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
+
     public FSharpSettings(ITypedSettingsStore store)
       : base (Langs.FSharp, store) {
     }

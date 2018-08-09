@@ -8,6 +8,7 @@ namespace Winterdom.Viasfora.Languages {
     protected abstract String[] ControlFlowDefaults { get; }
     protected abstract String[] LinqDefaults { get; }
     protected abstract String[] VisibilityDefaults { get; }
+    protected abstract String[] BracesDefaults { get; }
 
     public String KeyName { get; private set; }
     public String[] ControlFlow {
@@ -21,6 +22,10 @@ namespace Winterdom.Viasfora.Languages {
     public String[] Visibility {
       get { return this.Store.GetList(KeyName + "_Visibility", VisibilityDefaults); }
       set { this.Store.SetValue(KeyName + "_Visibility", value); }
+    }
+    public String[] Braces {
+      get { return this.Store.GetList(KeyName + "_Braces", BracesDefaults); }
+      set { this.Store.SetValue(KeyName + "_Braces", value); }
     }
     public bool Enabled {
       get { return this.Store.GetBoolean(KeyName + "_Enabled", true); }
@@ -37,6 +42,7 @@ namespace Winterdom.Viasfora.Languages {
         { KeyName + "_ControlFlow", ControlFlow },
         { KeyName + "_Linq", Linq },
         { KeyName + "_Visibility", Visibility },
+        { KeyName + "_Braces", Braces },
         { KeyName + "_Enabled", Enabled }
       };
     }

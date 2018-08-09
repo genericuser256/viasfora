@@ -35,6 +35,10 @@ namespace Winterdom.Viasfora.Languages {
       };
     protected override String[] VisibilityDefaults => EMPTY;
 
+    protected override String[] BracesDefaults => new String[] {
+      "(", ")", "{", "}", "[", "]"
+    };
+
     public RSettings(ITypedSettingsStore store)
       : base (Langs.R, store) {
     }

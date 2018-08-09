@@ -16,6 +16,7 @@ namespace Winterdom.Viasfora.Options {
       base.SaveSettingsToStorage();
       this.language.Settings.ControlFlow = ControlFlowKeywords.ToArray();
       this.language.Settings.Visibility = VisibilityKeywords.ToArray();
+      this.language.Settings.Braces = Braces.ToArray();
       this.language.Settings.Linq = LinqKeywords.ToArray();
       this.language.Settings.Enabled = Enabled;
       this.language.Settings.Save();
@@ -24,6 +25,7 @@ namespace Winterdom.Viasfora.Options {
       base.LoadSettingsFromStorage();
       ControlFlowKeywords = this.language.Settings.ControlFlow.ToList();
       VisibilityKeywords = this.language.Settings.Visibility.ToList();
+      Braces = this.language.Settings.Braces.ToList();
       LinqKeywords = this.language.Settings.Linq.ToList();
       Enabled = this.language.Settings.Enabled;
     }
@@ -45,6 +47,13 @@ namespace Winterdom.Viasfora.Options {
     [Editor(Constants.STRING_COLLECTION_EDITOR, typeof(UITypeEditor))]
     [TypeConverter(typeof(Design.StringListConverter))]
     public List<String> VisibilityKeywords { get; set; }
+
+    [LocDisplayName("Braces")]
+    [Description("Braces to highlight")]
+    [Category("SQL")]
+    [Editor(Constants.STRING_COLLECTION_EDITOR, typeof(UITypeEditor))]
+    [TypeConverter(typeof(Design.StringListConverter))]
+    public List<String> Braces { get; set; }
 
     [LocDisplayName("Statement")]
     [Description("Statement keywords to highlight")]
